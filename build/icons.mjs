@@ -7,6 +7,7 @@ const PATHS = {
   "arrow-right": '<line x1="4" y1="12" x2="20" y2="12"></line><polyline points="13 5 20 12 13 19"></polyline>',
   "arrow-up-right": '<line x1="6" y1="18" x2="18" y2="6"></line><polyline points="8 6 18 6 18 16"></polyline>',
   "chevron-down": '<polyline points="6 9 12 15 18 9"></polyline>',
+  "chevron-up": '<polyline points="18 15 12 9 6 15"></polyline>',
   menu: '<line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>',
   close: '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>',
   "book-open": '<path d="M2 4.5C4 3.5 7 3.5 9 4.5V19.5C7 18.5 4 18.5 2 19.5V4.5Z"></path><path d="M22 4.5C20 3.5 17 3.5 15 4.5V19.5C17 18.5 20 18.5 22 19.5V4.5Z"></path><line x1="12" y1="6" x2="12" y2="21"></line>',

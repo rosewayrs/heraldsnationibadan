@@ -303,6 +303,18 @@ body.menu-open{overflow:hidden}
 .social-icon:hover{background:var(--gold-500);color:var(--navy-950)}
 .social-icon .icon-sm{width:17px;height:17px}
 
+/* ---------- Scroll to top ---------- */
+.scroll-top-btn{position:fixed;right:20px;bottom:20px;z-index:250;width:46px;height:46px;border-radius:50%;border:0;background:var(--gold-500);color:var(--navy-950);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity var(--transition),transform var(--transition),visibility var(--transition),background var(--transition)}
+.scroll-top-btn.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.scroll-top-btn:hover{background:var(--gold-600)}
+.scroll-top-btn .icon{width:22px;height:22px}
+@media (prefers-reduced-motion:reduce){
+  .scroll-top-btn{transition:opacity 1ms,visibility 1ms}
+}
+@media (min-width:768px){
+  .scroll-top-btn{right:32px;bottom:32px}
+}
+
 /* ---------- Newsletter / Forms ---------- */
 .newsletter-form .input-row{display:flex;gap:8px}
 .newsletter-form input[type=email]{flex:1;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff}
@@ -338,6 +350,8 @@ body.menu-open{overflow:hidden}
 .info-card h4{display:flex;align-items:center;gap:10px;color:var(--navy-900);font-size:1rem;margin-bottom:10px}
 .info-card h4 .icon{width:20px;height:20px;color:var(--maroon-600)}
 .info-card p{margin:0;font-size:.92rem}
+.info-card a{text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px}
+.info-card a:hover{color:var(--gold-600);text-decoration-color:currentColor}
 
 /* ---------- Map ---------- */
 .map-frame{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border)}
@@ -355,7 +369,7 @@ body.menu-open{overflow:hidden}
 .value-split{display:grid;gap:36px;grid-template-columns:1fr;align-items:start}
 .value-bullets{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .value-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:.96rem;color:var(--ink-700)}
-.value-bullets .icon{color:var(--gold-600);flex:none;margin-top:2px}
+.value-bullets .icon-sm{width:18px;height:18px;color:var(--gold-600);flex:none;margin-top:2px}
 .value-split-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm)}
 .value-split-card h3{color:var(--navy-900);font-size:1.15rem;margin-bottom:10px}
 .value-split-card p{font-size:.94rem;margin-bottom:20px}
@@ -378,6 +392,11 @@ body.menu-open{overflow:hidden}
 .give-card{padding:32px;border-radius:var(--radius-lg);background:var(--mist-50);border:1px solid var(--border)}
 .give-card h3{color:var(--navy-900);display:flex;align-items:center;gap:12px}
 .give-card h3 .icon{color:var(--maroon-600);width:22px;height:22px}
+.give-account{margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.give-account:first-of-type{padding-top:0;border-top:0}
+.give-account-purpose{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--maroon-600);font-weight:700;margin-bottom:6px}
+.give-account-name{font-weight:600;color:var(--navy-900);margin:0 0 2px}
+.give-account-details{margin:0;font-size:.95rem;color:var(--ink-700)}
 
 /* ---------- Search ---------- */
 .search-box{max-width:640px;margin:0 auto 48px;position:relative}

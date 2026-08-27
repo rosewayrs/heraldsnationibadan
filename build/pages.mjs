@@ -8,6 +8,7 @@ import {
   articles,
   events,
   sermons,
+  giving,
   legal,
 } from "./content.mjs";
 import {
@@ -452,8 +453,8 @@ export function sermonsPage() {
     <div class="container">
       ${sectionHeading({ badgeText: "Sermon Archive", heading: "Recent Teaching Series", body: "Tap any series below to watch the full teaching on our Telegram channel.", align: "center" })}
       <div class="sermon-archive-grid">
-        ${sermons.archive.map((s) => sermonCard(s, site.social.telegram.value)).join("")}
-        ${sermonCardMore(site.social.telegram.value)}
+        ${sermons.archive.map((s) => sermonCard(s, sermons.telegramLink)).join("")}
+        ${sermonCardMore(sermons.telegramLink)}
       </div>
     </div>
   </section>
@@ -564,14 +565,23 @@ export function givePage() {
           <p>You're welcome to give during any of our gatherings at HeraldsNation Ibadan — offering and tithe baskets are available at every service.</p>
         </div>
         <div class="give-card">
-          <h3>${icon("briefcase")}Bank Transfer</h3>
-          <p><span class="tbd">Account details to be confirmed</span> — our bank details will be published here once finalised. Please check back, or contact us for current giving information.</p>
+          <h3>${icon("briefcase")}Bank Transfer Giving</h3>
+          ${giving.bankAccounts
+            .map(
+              (a) => `
+          <div class="give-account">
+            <span class="give-account-purpose">${esc(a.purpose)}</span>
+            <p class="give-account-name">${esc(a.accountName)}</p>
+            <p class="give-account-details">${esc(a.accountNumber)} &middot; ${esc(a.bank)}</p>
+          </div>`
+            )
+            .join("")}
         </div>
       </div>
       <div class="empty-state" style="margin-top:24px">
         <span class="empty-state-icon">${icon("check-circle", "icon-lg")}</span>
         <h3>Online Giving Is Coming Soon</h3>
-        <p>We're setting up secure online giving. In the meantime, please reach out via our Contact page for current giving options.</p>
+        <p>We're setting up secure card-based online giving. In the meantime, please give via bank transfer above, in person, or reach out via our Contact page.</p>
       </div>
     </div>
   </section>
@@ -605,8 +615,8 @@ export function contactPage() {
         <div class="split-copy">
           <div class="info-grid" style="grid-template-columns:1fr">
             <div class="info-card"><h4>${icon("map-pin")}Address</h4><p>${site.address.line1}<br>${site.address.line2}<br>${site.address.line3}<br>${site.address.line4}</p></div>
-            <div class="info-card"><h4>${icon("mail")}Email</h4><p class="tbd">${esc(site.contact.email.value)} <em>(to be confirmed)</em></p></div>
-            <div class="info-card"><h4>${icon("phone")}Phone</h4><p class="tbd">${esc(site.contact.phone.value)} <em>(to be confirmed)</em></p></div>
+            <div class="info-card"><h4>${icon("mail")}Email</h4><p><a href="mailto:${site.contact.email.value}">${esc(site.contact.email.value)}</a></p></div>
+            <div class="info-card"><h4>${icon("phone")}Phone</h4><p>${site.contact.phone.numbers.map((n) => `<a href="tel:${n.raw}">${esc(n.display)}</a>`).join(" &middot; ")}</p></div>
             <div class="info-card"><h4>${icon("clock")}Service Times</h4><p>${esc(site.serviceTimes.value)}</p></div>
           </div>
         </div>

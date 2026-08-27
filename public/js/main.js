@@ -38,6 +38,21 @@
     onScroll();
   }
 
+  /* ---------- Scroll to top ---------- */
+  var scrollTopBtn = document.getElementById("scroll-top");
+  if (scrollTopBtn) {
+    var onScrollTopVisibility = function () {
+      scrollTopBtn.classList.toggle("visible", window.scrollY > 480);
+    };
+    window.addEventListener("scroll", onScrollTopVisibility, { passive: true });
+    onScrollTopVisibility();
+    scrollTopBtn.addEventListener("click", function () {
+      var reduceMotion =
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
   /* ---------- Reveal on scroll ---------- */
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {

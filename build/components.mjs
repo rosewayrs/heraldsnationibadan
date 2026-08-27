@@ -158,7 +158,8 @@ export function footer() {
         ${socialIcons()}
       </div>
     </div>
-  </footer>`;
+  </footer>
+  <button type="button" id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">${icon("chevron-up")}</button>`;
 }
 
 // ---------------------------------------------------------------------------

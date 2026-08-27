@@ -79,6 +79,10 @@ export function organizationJsonLd() {
       addressRegion: "Oyo State",
       addressCountry: "NG",
     },
-    sameAs: [],
+    telephone: site.contact.phone.isPlaceholder ? undefined : site.contact.phone.numbers[0].raw,
+    email: site.contact.email.isPlaceholder ? undefined : site.contact.email.value,
+    sameAs: Object.values(site.social)
+      .filter((s) => !s.isPlaceholder)
+      .map((s) => s.value),
   };
 }

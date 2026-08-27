@@ -19,17 +19,24 @@ export const site = {
     line2: "No. 1, Asande House, Alarere Layout,",
     line3: "Off Lagos–Ibadan Expressway, Iwo Road,",
     line4: "Ibadan, Oyo State, Nigeria",
-    full: "HeraldsNation Ibadan, No. 1, Asande House, Alarere Layout, Off Lagos-Ibadan Expressway, Iwo Road, Ibadan, Oyo State",
+    full: "HeraldsNation Ibadan, No. 1, Asande House, Alarere Layout, Off Lagos-Ibadan Expressway, Iwo Road, Ibadan, Oyo State, Nigeria",
   },
   contact: {
-    email: { value: "To be confirmed", isPlaceholder: true },
-    phone: { value: "To be confirmed", isPlaceholder: true },
+    email: { value: "heraldsnationibadan@gmail.com", isPlaceholder: false },
+    phone: {
+      value: "0703 312 4833, 0907 721 1943",
+      numbers: [
+        { raw: "07033124833", display: "0703 312 4833" },
+        { raw: "09077211943", display: "0907 721 1943" },
+      ],
+      isPlaceholder: false,
+    },
   },
   serviceTimes: { value: "Sundays: 9:00AM · Thursdays: 5:30PM", isPlaceholder: false },
   social: {
-    instagram: { value: "#", isPlaceholder: true },
+    instagram: { value: "https://www.instagram.com/heraldsibadan/", isPlaceholder: false },
     facebook: { value: "#", isPlaceholder: true },
-    tiktok: { value: "#", isPlaceholder: true },
+    tiktok: { value: "https://www.tiktok.com/@heraldsnationibadan", isPlaceholder: false },
     youtube: { value: "#", isPlaceholder: true },
     telegram: { value: "https://t.me/heraldsibadan", isPlaceholder: false },
   },
@@ -148,6 +155,15 @@ export const ministries = [
     image: "/images/multimedia-ministry.jpg",
   },
   {
+    slug: "church-icon",
+    name: "Church Icon",
+    short: "The face of Heralds online.",
+    description:
+      "Church Icon serves as the face of Heralds online — creating and curating the content and public imagery that represent the church to the world, so our story is told with clarity and excellence wherever people first encounter us.",
+    icon: "camera",
+    image: null,
+  },
+  {
     slug: "music",
     name: "Music",
     short: "Leading the family into the presence of God.",
@@ -263,7 +279,7 @@ export const home = {
     heading: "Ready To Find Your People?",
     body: "We'd love to welcome you to Heralds International Christian Centre — a warm family of love, where you're discipled to walk in all that Christ has called you to be.",
     primaryCta: { label: "Plan Your Visit", href: "/about.html#visit" },
-    secondaryCta: { label: "Join The Family", href: "/about.html#membership" },
+    secondaryCta: { label: "Join The Family", href: "/membership.html" },
   },
 };
 
@@ -411,6 +427,10 @@ export const sermons = {
     heading: "Our Sermon Archive Is Coming Soon",
     body: "We're building out our library of past ministrations. In the meantime, join us live for the full experience of a service at Heralds.",
   },
+  // Dedicated Telegram group where the teaching/sermon archive itself lives
+  // (distinct from site.social.telegram, the general church channel used
+  // for live streaming and the site's social links).
+  telegramLink: "https://t.me/+YTeIhdJOLGEzNTA0",
   // Real teaching-series flyers from the church's Telegram channel. Order is
   // intentional (matches how the church wants them presented) -- do not
   // alphabetize or re-sort.
@@ -508,6 +528,26 @@ export const membership = {
     body: "New here? Experience a warm family of love, where you're discipled to walk in all that Christ has called you to be.",
     cta: { label: "Plan Your Visit", href: "/about.html#visit" },
   },
+};
+
+// ---------------------------------------------------------------------------
+// Giving — real bank transfer accounts as supplied by the church.
+// ---------------------------------------------------------------------------
+export const giving = {
+  bankAccounts: [
+    {
+      purpose: "Partnerships",
+      accountName: "The HeraldsNation Ministries Ibadan",
+      accountNumber: "1229492962",
+      bank: "Zenith Bank",
+    },
+    {
+      purpose: "Offering",
+      accountName: "The HeraldsNation - Ibadan",
+      accountNumber: "5120833913",
+      bank: "Moniepoint",
+    },
+  ],
 };
 
 export const legal = {
