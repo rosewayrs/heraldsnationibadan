@@ -1,0 +1,11 @@
+{
+  "name": "heralds-icc-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website for Heralds International Christian Centre, Ibadan — static site generator + built site.",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs"
+  },
+  "dependencies": {}
+}
