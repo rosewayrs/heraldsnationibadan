@@ -1,0 +1,461 @@
+/* ==========================================================================
+   Heralds International Christian Centre — Design System
+   Palette + rhythm adapted from reference analysis: deep navy dominant,
+   warm gold accent (swapped in for the reference's lime to sit with the
+   supplied maroon flame mark), generous section padding, pill badges,
+   large rounded cards, circular portrait treatment.
+   ========================================================================== */
+
+:root{
+  /* Colors */
+  --navy-950:#080f2b;
+  --navy-900:#101e6d;
+  --navy-800:#152a7a;
+  --navy-700:#1a4c8c;
+  --navy-600:#2c5fa0;
+  --gold-500:#d9a441;
+  --gold-600:#9c6417;
+  --gold-100:#faf1de;
+  --maroon-600:#7b3410;
+  --maroon-500:#9c481c;
+  --white:#ffffff;
+  --mist-50:#f4f7fc;
+  --mist-100:#eef2fa;
+  --mist-200:#e3e9f5;
+  --ink-900:#1e1e1e;
+  --ink-700:#3a3d47;
+  --ink-500:#6b7080;
+  --ink-300:#a4a9b8;
+  --border:#e4e8f2;
+
+  /* Typography */
+  --font-heading:'Montserrat', 'Montserrat Fallback', sans-serif;
+  --font-body:'Poppins', 'Poppins Fallback', sans-serif;
+
+  /* Layout */
+  --container-w:1240px;
+  --container-pad:24px;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:28px;
+  --radius-pill:999px;
+  --shadow-sm:0 2px 10px rgba(16,30,109,.06);
+  --shadow-md:0 12px 32px rgba(16,30,109,.12);
+  --shadow-lg:0 24px 60px rgba(8,15,43,.22);
+  --transition:200ms cubic-bezier(.4,0,.2,1);
+}
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{margin:0;font-family:var(--font-body);color:var(--ink-900);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none;margin:0;padding:0}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;line-height:1.15;margin:0 0 .5em}
+p{margin:0 0 1em;line-height:1.7;color:var(--ink-700)}
+input,textarea,select{font-family:inherit;font-size:1rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--gold-500);outline-offset:2px}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--navy-900);color:#fff;padding:12px 20px;z-index:1000;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+
+/* ---------- Layout ---------- */
+.container{width:100%;max-width:var(--container-w);margin:0 auto;padding:0 var(--container-pad)}
+section{padding:88px 0}
+.section-tight{padding:56px 0}
+main{overflow-x:hidden}
+
+.section-heading{max-width:680px;margin-bottom:48px}
+.section-heading-center{margin-left:auto;margin-right:auto;text-align:center}
+.section-heading h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--navy-900);margin-top:16px}
+.section-heading .accent{color:var(--gold-600)}
+.section-body{font-size:1.05rem;color:var(--ink-500)}
+
+.bg-mist{background:var(--mist-50)}
+.bg-navy{background:linear-gradient(160deg,var(--navy-900),var(--navy-950));color:#fff}
+.bg-navy p{color:#c9d2ec}
+.bg-navy h2,.bg-navy h3{color:#fff}
+
+/* ---------- Badge ---------- */
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--gold-500);border-radius:var(--radius-pill);font-size:.8rem;font-weight:600;letter-spacing:.02em;color:var(--navy-900)}
+.bg-navy .badge{color:#fff;border-color:var(--gold-500)}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold-500);flex:none}
+.hero .badge,.page-hero .badge,.sermon-copy .badge{color:#fff}
+.hero .btn-outline,.page-hero .btn-outline,.sermon-copy .btn-outline{color:#fff;border-color:rgba(255,255,255,.55)}
+.hero .btn-outline:hover,.page-hero .btn-outline:hover,.sermon-copy .btn-outline:hover{background:#fff;color:var(--navy-900)}
+
+.tbd{color:var(--maroon-600);font-weight:600}
+.tbd em{font-style:normal;font-weight:500;font-size:.85em;opacity:.8}
+.tbd-block{font-weight:600;color:var(--navy-900)}
+.bg-navy .tbd-block{color:#fff}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;border-radius:var(--radius-sm);white-space:nowrap;transition:transform var(--transition),background var(--transition),color var(--transition),box-shadow var(--transition);border:2px solid transparent;line-height:1}
+.icon{width:20px;height:20px;display:inline-block;flex:none}
+.btn-icon{width:16px;height:16px;flex:none}
+.btn-sm{padding:11px 18px;font-size:.85rem}
+.btn-md{padding:14px 24px;font-size:.95rem}
+.btn-lg{padding:16px 32px;font-size:1rem}
+.btn-primary{background:var(--navy-900);color:#fff}
+.btn-primary:hover{background:var(--navy-800);transform:translateY(-2px)}
+.btn-accent{background:var(--gold-500);color:var(--navy-950)}
+.btn-accent:hover{background:var(--gold-600);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--navy-900);border-color:var(--navy-900)}
+.btn-outline:hover{background:var(--navy-900);color:#fff}
+.bg-navy .btn-outline{color:#fff;border-color:rgba(255,255,255,.5)}
+.bg-navy .btn-outline:hover{background:#fff;color:var(--navy-900)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-outline-light:hover{background:rgba(255,255,255,.12)}
+.header-cta{display:none}
+.site-header .btn-outline{color:#fff;border-color:rgba(255,255,255,.55)}
+.site-header .btn-outline:hover{background:#fff;color:var(--navy-900)}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:200;background:linear-gradient(120deg,var(--navy-900),var(--navy-950));box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px var(--container-pad)}
+.logo img{height:44px;width:auto}
+.nav-desktop{display:none}
+.nav-desktop ul{display:flex;gap:30px}
+.nav-desktop a{color:#fff;font-size:.92rem;font-weight:500;padding:8px 2px;position:relative;opacity:.9}
+.nav-desktop a:hover,.nav-desktop a.active{opacity:1}
+.nav-desktop a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--gold-500);border-radius:2px}
+.header-actions{display:flex;align-items:center;gap:14px}
+.watch-link{display:none;align-items:center;gap:8px;color:#fff;font-weight:500;font-size:.9rem}
+.watch-link .icon-sm{width:16px;height:16px}
+.menu-toggle{color:#fff;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+.menu-toggle .icon{width:26px;height:26px}
+
+.mobile-menu{position:fixed;inset:0;top:0;background:linear-gradient(160deg,var(--navy-900),var(--navy-950));z-index:300;transform:translateX(100%);transition:transform 320ms cubic-bezier(.4,0,.2,1);overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-inner{padding:110px 28px 40px;min-height:100%;display:flex;flex-direction:column}
+.mobile-menu nav ul{display:flex;flex-direction:column;gap:6px}
+.mobile-menu nav a{display:block;color:#fff;font-size:1.4rem;font-weight:600;font-family:var(--font-heading);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu-actions{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.mobile-menu-social{margin-top:auto;padding-top:40px}
+
+body.menu-open{overflow:hidden}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:linear-gradient(115deg,var(--navy-900) 0%,var(--navy-900) 45%,var(--navy-950) 100%);color:#fff;overflow:hidden}
+.hero-inner{position:relative;z-index:2;padding:96px 0 120px;max-width:640px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);color:#fff;margin-top:20px}
+.hero p{color:#c9d2ec;font-size:1.1rem;max-width:520px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+.hero-media{position:absolute;inset:0;z-index:1}
+.hero-media img{width:100%;height:100%;object-fit:cover;opacity:.24}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--navy-900) 20%,rgba(16,30,109,.55) 55%,rgba(8,15,43,.35) 100%)}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
+.hero-slide.is-active{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .hero-slide{transition:none}
+}
+.hero-shape{position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;border:60px solid rgba(255,255,255,.05);z-index:1}
+
+/* ---------- Page hero (internal pages) ---------- */
+.page-hero{background:linear-gradient(120deg,var(--navy-900),var(--navy-950));color:#fff;padding:72px 0;position:relative;overflow:hidden}
+.page-hero.has-image{background-size:cover;background-position:center}
+.page-hero-sm{padding:56px 0}
+.page-hero h1{color:#fff;margin-top:16px;font-size:clamp(2rem,4.2vw,3rem)}
+.page-hero p{color:#c9d2ec;max-width:620px;font-size:1.05rem}
+.page-hero-inner{position:relative;z-index:2}
+
+/* ---------- Welcome / split section ---------- */
+.split{display:grid;gap:48px;align-items:center}
+.split-media{position:relative}
+.split-portrait{position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;max-width:420px;margin:0 auto;box-shadow:var(--shadow-lg);border:10px solid var(--mist-100)}
+.split-portrait img{width:100%;height:100%;object-fit:cover}
+.split-ring{position:absolute;inset:-30px;border:2px solid var(--mist-200);border-radius:50%;z-index:-1}
+.split h2{color:var(--navy-900)}
+.split .highlight{font-weight:600;color:var(--navy-900)}
+
+/* ---------- Experience cards (first-time visitor) ---------- */
+.experience-grid{display:grid;gap:24px;grid-template-columns:1fr}
+.exp-card{border-radius:var(--radius-lg);padding:36px 32px;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+.exp-card h3{font-size:1.3rem}
+.exp-card p{margin-bottom:20px}
+.exp-card-light{background:var(--mist-100);color:var(--ink-900)}
+.exp-card-light h3{color:var(--navy-900)}
+.exp-card-navy{background:linear-gradient(135deg,var(--navy-800),var(--navy-950));color:#fff}
+.exp-card-navy p{color:#c9d2ec}
+.exp-card-accent{background:linear-gradient(135deg,var(--gold-500),var(--maroon-500));color:#fff}
+.exp-card-accent p{color:rgba(255,255,255,.9)}
+.exp-card-media{position:absolute;inset:0;z-index:0}
+.exp-card-media img{width:100%;height:100%;object-fit:cover}
+.exp-card.has-media .exp-card-media::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,15,43,.86),rgba(8,15,43,.3))}
+.exp-card.has-media .exp-card-content{position:relative;z-index:1;color:#fff}
+.exp-card.has-media h3{color:#fff}
+.exp-card.has-media p{color:#e4e8f5}
+
+/* ---------- Sermon catch-up ---------- */
+.sermon-panel{background:linear-gradient(120deg,var(--navy-900),var(--navy-950));border-radius:var(--radius-lg);overflow:hidden;display:grid;grid-template-columns:1fr}
+.sermon-copy{padding:48px 40px;color:#fff}
+.sermon-copy h2{color:#fff;font-size:2rem}
+.sermon-copy p{color:#c9d2ec}
+.sermon-video{aspect-ratio:16/9;background:#000}
+.sermon-video iframe{width:100%;height:100%;border:0}
+
+/* ---------- Gallery strip ---------- */
+.gallery-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gallery-item{border-radius:var(--radius-md);overflow:hidden;aspect-ratio:1/1}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 500ms}
+.gallery-item:hover img{transform:scale(1.06)}
+
+/* ---------- Sermon archive grid ---------- */
+.sermon-archive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.sermon-card{position:relative;display:block;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:1/1}
+.sermon-card img{width:100%;height:100%;object-fit:cover;transition:transform 500ms}
+.sermon-card:hover img{transform:scale(1.06)}
+.sermon-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,15,43,.82) 0%,rgba(8,15,43,0) 50%);display:flex;align-items:flex-end;padding:14px;opacity:0;transition:opacity var(--transition)}
+.sermon-card:hover .sermon-card-overlay,.sermon-card:focus-visible .sermon-card-overlay{opacity:1}
+.sermon-card-overlay span{color:#fff;font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;gap:6px}
+.sermon-card-more{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,var(--navy-800),var(--navy-950));color:#fff;text-align:center;padding:24px}
+.sermon-card-more:hover{background:linear-gradient(135deg,var(--navy-900),var(--navy-950))}
+.sermon-card-more-icon{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:var(--gold-500);flex:none}
+.sermon-card-more span:last-child{font-weight:700}
+
+/* ---------- Testimony ---------- */
+.testimony-section{display:grid;gap:48px;align-items:center}
+.testimony-media{border-radius:var(--radius-lg);overflow:hidden;position:relative;aspect-ratio:4/3;box-shadow:var(--shadow-md)}
+.testimony-media img{width:100%;height:100%;object-fit:cover}
+.testimony-quote-icon{color:var(--gold-500);width:40px;height:40px;margin-bottom:16px}
+
+/* ---------- Ministry cards ---------- */
+.ministry-grid{display:grid;gap:24px;grid-template-columns:1fr}
+.ministry-card{border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column}
+.ministry-card-panel{background:var(--mist-50);border:1px solid var(--border)}
+.ministry-card-navy{background:linear-gradient(135deg,var(--navy-800),var(--navy-950));color:#fff}
+.ministry-card-navy p{color:#c9d2ec}
+.ministry-card-navy h3{color:#fff}
+.ministry-card-media{aspect-ratio:4/3;overflow:hidden}
+.ministry-card-media img{width:100%;height:100%;object-fit:cover;transition:transform 500ms}
+.ministry-card:hover .ministry-card-media img{transform:scale(1.05)}
+.ministry-card-body{padding:28px}
+.ministry-card-icon{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;background:var(--gold-100);color:var(--maroon-600);margin-bottom:16px}
+.ministry-card-navy .ministry-card-icon{background:rgba(255,255,255,.12);color:var(--gold-500)}
+.ministry-card-icon .icon{width:24px;height:24px}
+.ministry-card h3{font-size:1.15rem;color:var(--navy-900);margin-bottom:8px}
+.ministry-card-navy h3{color:#fff}
+.ministry-card p{font-size:.95rem;margin-bottom:0;color:var(--ink-700)}
+.ministry-card-navy p{color:#c9d2ec}
+.ministry-card-panel p{color:var(--ink-700)}
+
+/* ---------- Blog cards ---------- */
+.blog-grid{display:grid;gap:28px;grid-template-columns:1fr}
+.blog-card{border-radius:var(--radius-lg);overflow:hidden;background:#fff;border:1px solid var(--border);transition:box-shadow var(--transition),transform var(--transition)}
+.blog-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.blog-card-media{position:relative;display:block;aspect-ratio:3/2;overflow:hidden}
+.blog-card-media img{width:100%;height:100%;object-fit:cover}
+.blog-card-category{position:absolute;top:14px;left:14px;background:var(--gold-500);color:var(--navy-950);font-size:.72rem;font-weight:700;padding:6px 12px;border-radius:var(--radius-pill);text-transform:uppercase;letter-spacing:.04em}
+.blog-card-body{padding:24px}
+.blog-card h3{font-size:1.15rem;color:var(--navy-900);margin-bottom:10px}
+.blog-card h3 a:hover{color:var(--gold-600)}
+.text-link{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--navy-900)}
+.text-link:hover{color:var(--gold-600)}
+.icon-xs{width:14px;height:14px}
+
+/* ---------- Events ---------- */
+.event-grid{display:grid;gap:28px;grid-template-columns:1fr}
+.event-card{border-radius:var(--radius-lg);overflow:hidden;background:#fff;border:1px solid var(--border);transition:box-shadow var(--transition),transform var(--transition);display:flex;flex-direction:column}
+.event-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.event-card-media{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--navy-950)}
+.event-card-media img{width:100%;height:100%;object-fit:cover}
+.event-card-badge{position:absolute;top:14px;left:14px;background:var(--gold-500);color:var(--navy-950);font-size:.72rem;font-weight:700;padding:6px 12px;border-radius:var(--radius-pill);text-transform:uppercase;letter-spacing:.04em}
+.event-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.event-card-body h3{font-size:1.15rem;color:var(--navy-900);margin-bottom:12px}
+.event-card-meta{display:flex;align-items:flex-start;gap:8px;color:var(--ink-500);font-size:.88rem;margin-bottom:6px}
+.event-card-meta .icon-xs{color:var(--gold-600);flex:none;margin-top:3px}
+.event-card-body>p:not(.event-card-meta){color:var(--ink-500);margin:14px 0 20px}
+.event-card-body .btn{margin-top:auto;align-self:flex-start}
+
+/* ---------- Final CTA ---------- */
+.footer-cta{background:var(--mist-100);text-align:center}
+.footer-cta-inner{max-width:680px;margin:0 auto;padding:64px 0}
+.footer-cta h2{color:var(--navy-900);font-size:clamp(1.8rem,3.6vw,2.4rem)}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:28px}
+.footer-cta .btn-outline{color:var(--navy-900);border-color:var(--navy-900)}
+.footer-cta .btn-outline:hover{background:var(--navy-900);color:#fff}
+
+/* ---------- Footer ---------- */
+.site-footer{background:linear-gradient(160deg,var(--navy-900),var(--navy-950));color:#fff}
+.footer-main{padding:56px 0 32px}
+.footer-grid{display:grid;gap:40px;grid-template-columns:1fr}
+.footer-col h3{color:#fff;font-size:1rem;margin-bottom:16px}
+.footer-col h3.mt{margin-top:24px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col a{color:#c9d2ec;font-size:.92rem}
+.footer-col a:hover{color:var(--gold-500)}
+.footer-brand img{height:46px;margin-bottom:16px}
+.footer-tagline{color:#c9d2ec;font-size:.9rem;margin-bottom:16px}
+.footer-contact{display:flex;align-items:flex-start;gap:10px;color:#c9d2ec;font-size:.88rem;margin-bottom:10px}
+.footer-contact a{display:flex;align-items:center;gap:10px;color:#c9d2ec}
+.footer-contact .icon-sm{width:16px;height:16px;flex:none;margin-top:2px;color:var(--gold-500)}
+.tbd-block{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1)}
+.footer-bottom-inner{display:flex;flex-direction:column;gap:16px;align-items:center;padding:24px 0;text-align:center}
+.footer-bottom-inner p{margin:0;color:#9aa4c4;font-size:.84rem}
+.footer-legal{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.footer-legal a{color:#9aa4c4;font-size:.84rem}
+.footer-legal a:hover{color:var(--gold-500)}
+.social-row{display:flex;gap:10px}
+.social-icon{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff}
+.social-icon:hover{background:var(--gold-500);color:var(--navy-950)}
+.social-icon .icon-sm{width:17px;height:17px}
+
+/* ---------- Newsletter / Forms ---------- */
+.newsletter-form .input-row{display:flex;gap:8px}
+.newsletter-form input[type=email]{flex:1;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff}
+.newsletter-form input::placeholder{color:#9aa4c4}
+.newsletter-form .btn{padding:12px 16px}
+.hp-field{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+
+.form-grid{display:grid;gap:20px;grid-template-columns:1fr;margin-bottom:24px}
+.form-field label{display:block;font-weight:600;font-size:.88rem;margin-bottom:8px;color:var(--navy-900)}
+.form-field input,.form-field textarea,.form-field select{width:100%;padding:13px 16px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--mist-50);transition:border var(--transition)}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--navy-700);background:#fff}
+.form-field-full{grid-column:1/-1}
+.site-form{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-sm)}
+.form-note{margin-top:16px;font-weight:600;color:var(--navy-900)}
+.form-note.error{color:#b3261e}
+
+/* ---------- Empty state ---------- */
+.empty-state{text-align:center;padding:56px 24px;background:var(--mist-50);border-radius:var(--radius-lg);border:1px dashed var(--border)}
+.empty-state-icon{display:inline-flex;color:var(--gold-600);margin-bottom:16px}
+.empty-state h3{color:var(--navy-900);margin-bottom:8px}
+.empty-state p{color:var(--ink-500);max-width:440px;margin:0 auto}
+.icon-lg{width:44px;height:44px}
+
+/* ---------- Values grid (about) ---------- */
+.values-grid{display:grid;gap:24px;grid-template-columns:1fr}
+.value-card{padding:32px;border-radius:var(--radius-lg);background:var(--mist-50);border:1px solid var(--border)}
+.value-card h3{color:var(--navy-900);font-size:1.1rem}
+.value-card p{font-size:.94rem;margin:0}
+
+/* ---------- Ministry detail / two-col info ---------- */
+.info-grid{display:grid;gap:24px;grid-template-columns:1fr}
+.info-card{padding:28px;border-radius:var(--radius-md);background:#fff;border:1px solid var(--border)}
+.info-card h4{display:flex;align-items:center;gap:10px;color:var(--navy-900);font-size:1rem;margin-bottom:10px}
+.info-card h4 .icon{width:20px;height:20px;color:var(--maroon-600)}
+.info-card p{margin:0;font-size:.92rem}
+
+/* ---------- Map ---------- */
+.map-frame{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border)}
+.map-frame iframe{width:100%;height:380px;border:0;display:block}
+
+/* ---------- Membership: journey track ---------- */
+.journey-track{display:flex;flex-direction:column;gap:0;margin-top:16px}
+.journey-step{position:relative;padding:0 0 32px 0}
+.journey-step-num{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--navy-900);color:var(--gold-500);font-weight:700;font-size:.95rem;margin-bottom:14px}
+.journey-step h3{color:var(--navy-900);font-size:1.1rem;margin-bottom:6px}
+.journey-step p{font-size:.92rem;color:var(--ink-500);margin:0}
+.journey-connector{width:2px;height:24px;background:var(--border);margin:-8px 0 8px 22px}
+
+/* ---------- Membership: value split ---------- */
+.value-split{display:grid;gap:36px;grid-template-columns:1fr;align-items:start}
+.value-bullets{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
+.value-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:.96rem;color:var(--ink-700)}
+.value-bullets .icon{color:var(--gold-600);flex:none;margin-top:2px}
+.value-split-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm)}
+.value-split-card h3{color:var(--navy-900);font-size:1.15rem;margin-bottom:10px}
+.value-split-card p{font-size:.94rem;margin-bottom:20px}
+
+/* ---------- Membership: pastors ---------- */
+.pastor-grid{display:grid;gap:24px;grid-template-columns:1fr}
+.pastor-card{padding:32px;border-radius:var(--radius-lg);background:var(--mist-50);border:1px solid var(--border);border-top:3px solid var(--gold-500)}
+.pastor-role{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--maroon-600);font-weight:700;margin-bottom:8px}
+.pastor-card h3{color:var(--navy-900);font-size:1.15rem;margin-bottom:10px}
+.pastor-card p{font-size:.92rem;margin:0;color:var(--ink-500)}
+
+/* ---------- Article page ---------- */
+.article-body{max-width:720px;margin:0 auto}
+.article-body p{font-size:1.08rem;color:var(--ink-700)}
+.article-meta{display:flex;gap:14px;align-items:center;color:var(--ink-500);font-size:.88rem;margin-bottom:8px}
+.article-hero-image{border-radius:var(--radius-lg);overflow:hidden;margin:32px auto;max-width:900px;box-shadow:var(--shadow-md)}
+
+/* ---------- Give page ---------- */
+.give-grid{display:grid;gap:24px;grid-template-columns:1fr}
+.give-card{padding:32px;border-radius:var(--radius-lg);background:var(--mist-50);border:1px solid var(--border)}
+.give-card h3{color:var(--navy-900);display:flex;align-items:center;gap:12px}
+.give-card h3 .icon{color:var(--maroon-600);width:22px;height:22px}
+
+/* ---------- Search ---------- */
+.search-box{max-width:640px;margin:0 auto 48px;position:relative}
+.search-box input{width:100%;padding:16px 20px 16px 52px;border-radius:var(--radius-pill);border:1.5px solid var(--border);font-size:1rem}
+.search-box .icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--ink-500)}
+#search-results{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.search-result{padding:20px 24px;border-radius:var(--radius-md);border:1px solid var(--border);display:block}
+.search-result:hover{border-color:var(--navy-700)}
+.search-result h4{margin:0 0 6px;color:var(--navy-900)}
+.search-result p{margin:0;font-size:.9rem;color:var(--ink-500)}
+.search-result .tag{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--maroon-600);font-weight:700;margin-bottom:6px}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 700ms ease,transform 700ms ease}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- 404 ---------- */
+.notfound{text-align:center;padding:140px 24px}
+.notfound h1{font-size:6rem;color:var(--navy-900);margin-bottom:0}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Tablet up: 768px */
+@media (min-width:768px){
+  .experience-grid{grid-template-columns:repeat(2,1fr)}
+  .experience-grid .exp-card:first-child{grid-column:1/-1}
+  .ministry-grid{grid-template-columns:repeat(2,1fr)}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+  .values-grid{grid-template-columns:repeat(2,1fr)}
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+  .give-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-strip{grid-template-columns:repeat(3,1fr)}
+  .sermon-archive-grid{grid-template-columns:repeat(3,1fr)}
+  .event-grid{grid-template-columns:repeat(2,1fr)}
+  .pastor-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Desktop up: 1024px */
+@media (min-width:1024px){
+  .nav-desktop{display:block}
+  .watch-link{display:inline-flex}
+  .header-cta{display:inline-flex}
+  .menu-toggle{display:none}
+  .split{grid-template-columns:1fr 1fr}
+  .split-media{order:0}
+  .split.reverse .split-media{order:1}
+  .experience-grid{grid-template-columns:repeat(3,1fr)}
+  .experience-grid .exp-card:first-child{grid-column:span 1}
+  .sermon-panel{grid-template-columns:1fr 1fr}
+  .testimony-section{grid-template-columns:1fr 1fr}
+  .ministry-grid{grid-template-columns:repeat(3,1fr)}
+  .blog-grid{grid-template-columns:repeat(3,1fr)}
+  .event-grid{grid-template-columns:repeat(3,1fr)}
+  .values-grid{grid-template-columns:repeat(4,1fr)}
+  .journey-track{flex-direction:row;align-items:flex-start}
+  .journey-step{flex:1;padding:0 24px 0 0}
+  .journey-connector{width:auto;flex:1;height:2px;margin:22px 0 0;align-self:flex-start;max-width:60px}
+  .value-split{grid-template-columns:1.3fr 1fr;gap:56px}
+  .footer-grid{grid-template-columns:2fr 1fr 1fr 1.4fr}
+  .footer-bottom-inner{flex-direction:row;justify-content:space-between;text-align:left}
+  section{padding:112px 0}
+}
+
+/* Large desktop: 1280px+ */
+@media (min-width:1280px){
+  :root{--container-pad:32px}
+}
+
+/* Small phones */
+@media (max-width:389px){
+  .hero h1{font-size:2.1rem}
+  section{padding:64px 0}
+  .btn-lg{padding:14px 22px;font-size:.92rem}
+}
