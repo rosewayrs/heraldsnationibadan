@@ -1,6 +1,6 @@
 # Heralds International Christian Centre — Website
 
-A complete, production-ready website for **Heralds International Christian Centre, Ibadan**, built with the layout philosophy, section rhythm, navigation structure, card patterns and responsive behavior of `elevationng.org` as a design reference — fully re-skinned with Heralds' own identity, copy, colors and photography. No Elevation Church branding, imagery or content is used anywhere in this project.
+A complete, production-ready website for **Heralds International Christian Centre, Ibadan**
 
 ## A note on the tech stack
 
